@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bootstrap Automatic wrapping of Rows and columns</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ********** -->
+	<!-- Bootstrap CSS -->
+	<!-- ********** -->
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+	<style>
+		div {
+			border: 1px solid #333;
+			height: 40px;
+		}
+		.light {
+			background-color: aliceblue;
+		}
+		.dark {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<!-- 5. MEER dan 12 kolommen? Bootstrap wrapt automatisch -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 light">Ik ben de eerste div</div>
+			<div class="col-md-3 dark">Ik ben de tweede div</div>
+			<div class="col-md-3 light">Ik ben de derde div</div>
+			<div class="col-md-3 dark">Ik ben de vierde div</div>
+			<div class="col-md-3 light">Ik ben de eerste div</div>
+			<div class="col-md-3 dark">Ik ben de tweede div</div>
+			<div class="col-md-3 light">Ik ben de derde div</div>
+		</div>
+	</div>
+
+	<!-- ********** -->
+	<!-- JavaScript -->
+	<!-- ********** -->
+	<script src="Scripts/jquery-1.9.0.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+</body>
+</html>

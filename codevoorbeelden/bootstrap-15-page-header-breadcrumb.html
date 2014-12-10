@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bootstrap Basic Page Template</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ********** -->
+	<!-- Bootstrap CSS -->
+	<!-- ********** -->
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+	<style>
+		#myCarousel img {
+			width: 640px;
+			height: 480px;
+		}
+	</style>
+</head>
+<body>
+	<!-- UI -->
+	<div class="container">
+		<div class="page-header">
+			Breadcrumb: 
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#" class="active">Carousel</a></li>
+			</ol>
+			<h1>
+				Page header - 
+				<small>subtitel voor de pagina</small>
+			</h1>
+		</div>
+		<div class="row">
+			
+			<!-- Carrousel -->
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+					<li data-target="#myCarousel" data-slide-to="4"></li>
+					<li data-target="#myCarousel" data-slide-to="5"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<!-- Item 1 -->
+					<div class="item active">
+						<img src="img/kitten_01.jpg" alt="Kitten - 01" />
+						<div class="carousel-caption">
+							Poezenplaatje 01
+						</div>
+					</div>
+					<!-- Item 2 -->
+					<div class="item">
+						<img src="img/kitten_02.jpg" alt="Kitten - 02" />
+						<div class="carousel-caption">
+							Poezenplaatje 02
+						</div>
+					</div>
+					<!-- Item 3 -->
+					<div class="item">
+						<img src="img/penguin_01.png" alt="Pinguin - 01" />
+						<div class="carousel-caption">
+							Pinguin - 01
+						</div>
+					</div>
+					<!-- Item 4 -->
+					<div class="item">
+						<img src="img/penguin_02.png" alt="Pinguin  - 02" />
+						<div class="carousel-caption">
+							Pinguin 02
+						</div>
+					</div>
+					<!-- Item 5 -->
+					<div class="item">
+						<img src="img/puppy_01.jpg" alt="Puppy - 01" />
+						<div class="carousel-caption">
+							Puppy 01
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/puppy_02.jpg" alt="Puppy - 02" />
+						<div class="carousel-caption">
+							Puppy 02
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div><!-- /Carousel -->
+
+		</div>
+		<div class="row">
+			<!-- Knoppen om carousel te bedienen -->
+			<button id="btnPause" class="btn btn-default">Pause</button>
+			<button id="btnPrev" class="btn btn-default">Vorige</button>
+			<button id="btnNext" class="btn btn-default">Volgende</button>
+			<button id="btnNum" class="btn btn-default">Ga naar nummer: </button>
+			<select id="selectNum">
+				<option value="1" selected>1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4	</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+			<div id="divResult"></div>
+		</div>
+	</div>
+	<!-- /UI -->
+	<!-- ********** -->
+	<!-- JavaScript -->
+	<!-- ********** -->
+	<script src="Scripts/jquery-1.9.0.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+	<script>
+		$(document).ready(function () {
+			$carousel = $('#myCarousel');	// caching
+			var state = 'cycle';			// flag
+
+			// 1. carousel pauzeren
+			$('#btnPause').on('click', function (e) {
+				e.preventDefault();
+				if (state === 'cycle') {
+					$carousel.carousel('pause');
+					state = 'pause';
+				} else {
+					$carousel.carousel('cycle');
+					state = 'cycle';
+				}
+			});
+
+			// 2. Knop Volgende
+			$('#btnNext').on('click', function (e) {
+				e.preventDefault();
+				$carousel.carousel('next');
+			});
+
+			// 3. Knop Vorige
+			$('#btnPrev').on('click', function (e) {
+				e.preventDefault();
+				$carousel.carousel('prev');
+			});
+
+			// 4. Knop Goto Num
+			$('#btnNum').on('click', function (e) {
+				e.preventDefault();
+				var num = parseInt($('#selectNum').val() - 1); // zero based array
+				$carousel.carousel('pause');
+				$carousel.carousel(num);
+			});
+		});
+
+	</script>
+</body>
+</html>

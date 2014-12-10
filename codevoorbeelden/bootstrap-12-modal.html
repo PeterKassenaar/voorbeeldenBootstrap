@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bootstrap Modal</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ********** -->
+	<!-- Bootstrap CSS -->
+	<!-- ********** -->
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+	<!-- UI -->
+	<div class="container">
+		<div class="row">
+			<h1>Modal dialog voorbeeld</h1>
+			<a href="#" class="btn btn-primary" id="btnModal">Open Modal Dialog</a>
+			<div id="divResult"></div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modal-voorwaarden">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Accepteer de voorwaarden</h4>
+				</div>
+				<div class="modal-body">
+					<p>Gaat u akkoord met onze algemene voorwaarden?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="btnRejectModal">Nee</button>
+					<button type="button" class="btn btn-primary" id="btnAcceptModal">Ja</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- ********** -->
+	<!-- JavaScript -->
+	<!-- ********** -->
+	<script src="Scripts/jquery-1.9.0.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			// 1. click event voor knop aanhaken en Modal tonen
+			$('#btnModal').on('click', function (e) {
+				e.preventDefault();
+				$('#modal-voorwaarden').modal('show');
+			});
+
+			// 2. Dismiss-event ('niet geaccepteerd') afvangen
+			$('#btnRejectModal').on('click', function(e){
+				e.preventDefault();
+				$('#modal-voorwaarden').modal('hide');
+				$('#divResult').append('Helaas, voorwaarden niet geaccepteerd.<br />');
+			});
+
+			// 3. Accept-event ('wel geaccepteerd') afvangen
+			$('#btnAcceptModal').on('click', function (e) {
+				e.preventDefault();
+				$('#modal-voorwaarden').modal('hide');
+				$('#divResult').append('Bedankt! Voorwaarden geaccepteerd.<br />');
+			});
+
+			// 4. Voorbeeld - Modal events afvangen en in de UI tonen of Modal on/zichtbaar is
+			$('#modal-voorwaarden').on('shown.bs.modal', function () {
+				$('#divResult').append('Modal is nu zichtbaar.<br />');
+			});
+			$('#modal-voorwaarden').on('hidden.bs.modal', function () {
+				$('#divResult').append('Modal is nu verborgen.<br />');
+			});
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Mobile First Responsive Web Design</title>
+	<style>
+		/* standaardbreedte, mobile phone */
+		#main-content {
+			width: 320px;
+			border: 1px solid red;
+			margin : 0 auto;
+		}
+
+		/* Media Query 1: small tablet/ large phone  breedte */
+		@media only screen and (min-width: 768px){
+			#main-content {
+				width: 680px;
+			}
+			/* overige rules ... */
+		}
+
+		/* Media Query 2: desktop breedte */
+		@media only screen and (min-width: 992px)  {
+			#main-content {
+				width: 980px;
+			}
+			/* overige rules ... */
+		}		
+	</style>
+</head>
+<body>
+	<div id="main-content">
+		Tincidunt integer eu augue augue nunc elit dolor,
+		luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+	</div>
+</body>
+</html>

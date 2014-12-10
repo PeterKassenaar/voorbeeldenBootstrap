@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bootstrap Forms</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ********** -->
+	<!-- Bootstrap CSS -->
+	<!-- ********** -->
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+	<!-- Formulier maken -->
+	<div class="container">
+		<div class="row">
+			<h1>Voorbeeld formulier</h1>
+			<form role="form">
+				<!-- Eerste 'form group', groepeert bij elkaar horende labels en elementen -->
+				<div class="form-group">
+					<label for="txtEmail">E-mail</label>
+					<input type="email" class="form-control" id="txtEmail" placeholder="E-mailadres">
+				</div>
+				<!-- Tweede 'form group', groepeert bij elkaar horende labels en elementen -->
+				<div class="form-group">
+					<label for="txtPassword">Password</label>
+					<input type="password" class="form-control" id="txtPassword" placeholder="Wachtwoord">
+				</div>
+				<!-- Derde 'form group', is hier in feite overbodig, omdat er alleen maar een btn in staat -->	
+				<div class="form-group">
+					<a href="#"  class="btn btn-primary btn-block">Verzenden</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- ********** -->
+	<!-- JavaScript -->
+	<!-- ********** -->
+	<script src="Scripts/jquery-1.9.0.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+</body>
+</html>

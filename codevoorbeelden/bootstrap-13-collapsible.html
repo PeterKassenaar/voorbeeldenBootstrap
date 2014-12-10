@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bootstrap Collapsible</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ********** -->
+	<!-- Bootstrap CSS -->
+	<!-- ********** -->
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+	<!-- UI -->
+	<div class="container">
+		<div class="row">
+
+			<h1>Bootstrap collapsible voorbeeld</h1>
+			<div id="divResult"></div>
+			<!-- Knoppen -->
+			<button class="btn btn-primary" id="btnShowDogs">Honden</button>
+			<button class="btn btn-primary" id="btnShowCats">Poezen</button>
+			<button class="btn btn-primary" id="btnShowPenguins">Pinguins</button>
+			<!-- Collapsible panel -->
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseDogs">
+								Honden
+							</a>
+						</h4>
+					</div>
+					<div id="collapseDogs" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<img src="img/puppy_01.jpg" width="260" class="pull-left" />
+							Lief schattig hondje,
+							Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseCats">
+								Poezen
+							</a>
+						</h4>
+					</div>
+					<div id="collapseCats" class="panel-collapse collapse">
+						<div class="panel-body">
+							<img src="img/kitten_02.jpg" width="260" class="pull-left" />
+							Lief, schattig poesje,
+							Scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue.
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapsePenguins">
+								Pinguins
+							</a>
+						</h4>
+					</div>
+					<div id="collapsePenguins" class="panel-collapse collapse">
+						<div class="panel-body">
+							<img src="img/penguin_01.png" width="260" class="pull-left"/>
+							Op de zuidpool leven pinguins in schier onmenschelijke omstandigheden,
+							Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	
+
+	<!-- ********** -->
+	<!-- JavaScript -->
+	<!-- ********** -->
+	<script src="Scripts/jquery-1.9.0.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			// 1. click events voor knoppen aanhaken en collapsibles togglen
+			$('#btnShowDogs').on('click', function (e) {
+				e.preventDefault();
+				$('#collapseDogs').collapse('show');
+			});
+			$('#btnShowCats').on('click', function (e) {
+				e.preventDefault();
+				$('#collapseCats').collapse('show');
+			});
+			$('#btnShowPenguins').on('click', function (e) {
+				e.preventDefault();
+				$('#collapsePenguins').collapse('show');
+			});
+
+			
+		});// einde document.ready()
+
+	</script>
+</body>
+</html>

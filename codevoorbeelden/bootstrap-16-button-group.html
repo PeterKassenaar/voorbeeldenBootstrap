@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bootstrap Button Groups</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ********** -->
+	<!-- Bootstrap CSS -->
+	<!-- ********** -->
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+	<!-- UI -->
+	<div class="container">
+		<div class="page-header">
+			<h1>
+				Button Groups
+				<small>Losse buttons manipuleren als groep</small>
+			</h1>
+		</div>
+		<div class="row">
+			<!-- Knoppen, gegroepeerd als Button Group-->
+			<h2>Standaard button group</h2>
+			<div class="btn-group">
+				<button id="btnPause" class="btn btn-default">Pause</button>
+				<button id="btnPrev" class="btn btn-default">Vorige</button>
+				<button id="btnNext" class="btn btn-default">Volgende</button>
+				<button id="btnNum" class="btn btn-default">Nummer</button>
+			</div>
+
+			<h2>Button group met kleine knoppen</h2>
+			<!-- Knoppen, gegroepeerd als Button Group-->
+			<div class="btn-group btn-group-sm">
+				<button id="btnPause" class="btn btn-default">Pause</button>
+				<button id="btnPrev" class="btn btn-default">Vorige</button>
+				<button id="btnNext" class="btn btn-default">Volgende</button>
+				<button id="btnNum" class="btn btn-default">Nummer</button>
+			</div>
+
+			<h2>Verticale button group</h2>
+			<!-- Extra class btn-group-vertical -->
+			<div class="btn-group btn-group-vertical">
+				<button id="btnPause" class="btn btn-default">Pause</button>
+				<button id="btnPrev" class="btn btn-default">Vorige</button>
+				<button id="btnNext" class="btn btn-default">Volgende</button>
+				<button id="btnNum" class="btn btn-default">Nummer</button>
+			</div>
+
+			<h2>Button group als checkboxes</h2>
+			<!-- Extra attribuut data-toggle -->
+			<div id="" class="btn-group btn-group" data-toggle="buttons">
+				<label id="btnPause" class="btn btn-default"><input type="checkbox" />Eerste</label>
+				<label id="btnPrev" class="btn btn-default"><input type="checkbox" />Tweede</label>
+				<label id="btnNext" class="btn btn-default"><input type="checkbox" />Derde</label>
+				<label id="btnNum" class="btn btn-default"><input type="checkbox" />Vierde</label>
+			</div>
+
+			<h2>Button group als Radio Buttons (aanbevolen bij touch-controls)</h2>			
+			<div class="btn-group btn-group" data-toggle="buttons">
+				<label id="btnPause" class="btn btn-success"><input type="radio" />Eerste</label>
+				<label id="btnPrev" class="btn btn-default"><input type="radio" />Tweede</label>
+				<label id="btnNext" class="btn btn-default"><input type="radio" />Derde</label>
+				<label id="btnNum" class="btn btn-default"><input type="radio" />Vierde</label>
+			</div>
+		</div>
+	</div>
+	<!-- /UI -->
+	<!-- ********** -->
+	<!-- JavaScript -->
+	<!-- ********** -->
+	<script src="Scripts/jquery-1.9.0.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+
+</body>
+</html>

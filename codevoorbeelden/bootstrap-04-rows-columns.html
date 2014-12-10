@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bootstrap Rows and columns</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ********** -->
+	<!-- Bootstrap CSS -->
+	<!-- ********** -->
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+	<style>
+		/* some helper styles */
+		div {
+			border: 1px solid #333;
+			min-height: 40px;
+		}
+
+		.light {
+			background-color: aliceblue;
+		}
+
+		.dark {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<!-- 0. Geen classes: altijd 100% breed binnen de container -->
+	<div class="container">
+		<div>Ik ben de eerste div</div>
+		<div>Ik ben de tweede div</div>
+	</div>
+
+
+	<!-- 1. Met kolommen. 50%/50%-verdeling op medium devices and up -->
+	<div class="container">
+		<div class="col-md-6 light ">Ik ben de eerste div</div>
+		<div class="col-md-6 dark">Ik ben de tweede div</div>
+	</div> 
+
+	<!-- 2. Verbeterde kolommen. Ingesloten door een Row, waardoor ongewenste margin/padding wordt voorkomen -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6  light">Ik ben de eerste div</div>
+			<div class="col-xs-6  dark">Ik ben de tweede div</div>
+		</div>
+	</div>
+	<!-- ********** -->
+	<!-- JavaScript -->
+	<!-- ********** -->
+	<script src="Scripts/jquery-1.9.0.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+</body>
+</html>

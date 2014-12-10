@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Traditioneel Responsive Web Design</title>
+	<style>
+		/* standaardbreedte, desktop */
+		#main-content {
+			width: 980px;
+			border: 1px solid red;
+			margin : 0 auto;
+		}
+
+		/* Media Query 1: tablet breedte */
+		@media only screen and (min-width: 768px) and (max-width:959px) {
+			#main-content {
+				width: 740px;
+			}
+		.myClass {
+		}
+			/* overige rules ... */
+		}/* DIT IS HET EINDE VAN TABLET FORMAAT */
+
+
+		/* Media Query 2: small tablet/ phone  breedte */
+		@media only screen and (max-width: 767px){
+			#main-content {
+				width: 460px;
+			}
+			/* overige rules ... */
+		}
+	</style>
+</head>
+<body>
+	<div id="main-content">
+		Tincidunt integer eu augue augue nunc elit dolor,
+		luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+	</div>
+</body>
+</html>
